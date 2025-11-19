@@ -8,6 +8,8 @@ import StatsCard from '@/components/StatsCard';
 import RevenueChart from '@/components/RevenueChart';
 import CalendarWidget from '@/components/CalendarWidget';
 import CampaignModal from '@/components/CampaignModal';
+import DonationPulseChart from '@/components/DonationPulseChart';
+import ActiveCampaignsWidget from '@/components/ActiveCampaignsWidget';
 
 interface Campaign {
   id: number;
@@ -169,6 +171,16 @@ function Dashboard({ factoryAddress }: DashboardProps) {
           period="Month"
           iconColor="#f59e0b"
         />
+      </div>
+
+      {/* Active Campaigns & Donation Pulse */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-1">
+          <ActiveCampaignsWidget />
+        </div>
+        <div className="lg:col-span-2">
+          <DonationPulseChart />
+        </div>
       </div>
 
       {/* Chart and Calendar */}
